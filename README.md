@@ -12,7 +12,7 @@ yarn
 yarn run test
 ```
 
-** or npm **
+**or npm**
 
 ```bash
 git clone https://github.com/Dash-OS/graphql-dataloader-example.git
