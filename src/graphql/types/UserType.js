@@ -50,7 +50,7 @@ const User = new GraphQLInterfaceType({
   name: 'UserInterface',
   description: 'A User of a Given Type',
   fields: () => getCommonUserFields(),
-  resolveType(user) {
+  resolveType(/* user */) {
     // Once we want to allow querying of multiple user types we
     // can add them here, returning the appropriate user.
     return NormalUser;

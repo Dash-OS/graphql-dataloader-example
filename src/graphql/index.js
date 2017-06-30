@@ -17,11 +17,11 @@ export default function runGraphQL(evt) {
   /* Run our GraphQL Query against our schema and
      return a promise that will resolve to the final result. */
 
-  let { query, root, variables } = evt;
-
+  let { query } = evt;
+  const { root, variables } = evt;
   /* Handle the initial introspection of GraphiQL for auto completion and
      handling https://github.com/graphql/graphiql */
-  if (evt && evt.query && evt.query.hasOwnProperty('query')) {
+  if (evt && evt.query && evt.query.query) {
     query = event.query.query.replace('\n', ' ', 'g');
   }
 

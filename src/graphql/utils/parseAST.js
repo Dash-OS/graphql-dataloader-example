@@ -8,9 +8,7 @@ export function parseFieldNodes(fieldNodes) {
   }
   const response = {};
   for (const fieldNode of fieldNodes) {
-    response[fieldNode.name.value] = parseSelectionSetValues(
-      fieldNode.selectionSet,
-    );
+    response[fieldNode.name.value] = parseSelectionSetValues(fieldNode.selectionSet);
   }
   return response;
 }

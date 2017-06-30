@@ -68,21 +68,26 @@ const exampleQueryTwo = `
   }
 `;
 
-function runExampleQueries() {
+// eslint-disable-next-line
+function runExampleQueryOne() {
   // Each individual request has it's own cache.
-  // runQuery({
-  //   query: exampleQueryOne,
-  // }).then(result => {
-  //   console.log('Result of Query One:');
-  //   console.log(JSON.stringify(result, null, 2));
-  // });
+  return runQuery({
+    query: exampleQueryOne,
+    // eslint-disable-next-line
+  }).then(result => {
+    console.log('Result of Query One:');
+    console.log(JSON.stringify(result, null, 2));
+  });
+}
 
-  runQuery({
+function runExampleQueryTwo() {
+  return runQuery({
     query: exampleQueryTwo,
+    // eslint-disable-next-line
   }).then(result => {
     console.log('Result of Query Two:');
     console.log(JSON.stringify(result, null, 2));
   });
 }
 
-runExampleQueries();
+runExampleQueryTwo();

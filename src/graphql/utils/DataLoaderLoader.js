@@ -20,14 +20,13 @@ import DataLoader from 'dataloader';
  * @return {String}
  */
 function getDataLoaderLoaderCacheKey(key) {
-  return JSON.stringify(key, function(k, v) {
+  return JSON.stringify(key, (k, v) => {
     if (typeof v === 'function') {
       return String(v);
     } else if (v instanceof Map || v instanceof Set) {
       return [...v];
-    } else {
-      return v;
     }
+    return v;
   });
 }
 
@@ -65,7 +64,7 @@ export default class DataLoaderLoader {
    * @param  {Any} key A key representing the values passed to .load function.
    * @return {Promise} Returns the result of the .load() request.
    */
-  load = (loader, key, opts) => this.ensure(loader).load(key);
+  load = (loader, key) => this.ensure(loader).load(key);
 
   /**
    * .create()
